@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau au chocolat — Recette</title>
+    <meta name="description" content="Recette du gâteau au chocolat fondant, avec intensité de chocolat ajustable et mode cuisine immersif.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Données structurées Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "Gâteau au chocolat",
+      "description": "Cette recette facile du gâteau au chocolat est un grand classique qui fera plaisir à vos enfants.",
+      "prepTime": "PT10M",
+      "cookTime": "PT25M",
+      "totalTime": "PT35M",
+      "recipeYield": "4 portions",
+      "recipeIngredient": [
+        "200 g de chocolat noir",
+        "200 g de beurre",
+        "150 g de sucre",
+        "3 œufs",
+        "80 g de farine"
+      ],
+      "recipeInstructions": [
+        { "@type": "HowToStep", "text": "Faire fondre le chocolat avec le beurre." },
+        { "@type": "HowToStep", "text": "Mélanger le sucre, les œufs et la farine." },
+        { "@type": "HowToStep", "text": "Mélanger le tout pour obtenir une pâte lisse." },
+        { "@type": "HowToStep", "text": "Verser dans un moule et mettre au four à 180°C pendant 25 minutes." }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <button id="btn-theme" class="bouton-theme-flottant" type="button" aria-pressed="false" title="Basculer le mode sombre">
+        <span class="icone-theme">🌙</span>
+    </button>
+
+    <main class="contenu">
+
+        <!-- ============ HÉRO ============ -->
+        <section class="hero" id="hero">
+            <div class="hero-contenu">
+                <p class="categorie-hero anim-entree" style="--delai:0s">Recette</p>
+                <h1 class="anim-entree" style="--delai:0.1s">Gâteau au chocolat</h1>
+                <p class="description-hero anim-entree" style="--delai:0.2s">
+                    Cette recette facile du gâteau au chocolat est un grand classique qui fera plaisir à vos enfants.
+                </p>
+
+                <div class="controle-cacao anim-entree" style="--delai:0.3s">
+                    <div class="barre-chocolat" aria-hidden="true">
+                        <span class="carre-chocolat"></span>
+                        <span class="carre-chocolat"></span>
+                        <span class="carre-chocolat"></span>
+                        <span class="carre-chocolat"></span>
+                        <span class="carre-chocolat"></span>
+                    </div>
+
+                    <label for="cacao-range">Intensité du chocolat</label>
+                    <input type="range" id="cacao-range" min="40" max="100" value="70" step="1">
+                    <p class="cacao-valeur"><span id="cacao-pourcentage">70</span>% cacao — <span id="cacao-qualificatif">Noir intense</span></p>
+                </div>
+            </div>
+
+            <svg class="drip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,0 L1200,0 L1200,20 C1150,20 1150,55 1100,55 C1050,55 1050,15 1000,15 C950,15 950,50 900,50 C850,50 850,10 800,10 C750,10 750,45 700,45 C650,45 650,5 600,5 C550,5 550,50 500,50 C450,50 450,10 400,10 C350,10 350,45 300,45 C250,45 250,15 200,15 C150,15 150,55 100,55 C50,55 50,20 0,20 Z"/>
+            </svg>
+        </section>
+
+        <!-- ============ CORPS ============ -->
+        <div class="corps">
+
+            <div class="info reveal">
+                <img class="centre info" src="gateau.jpg" alt="Gâteau au chocolat fondant tout juste sorti du four">
+
+                <table class="info">
+                    <tr>
+                        <th>Difficulté</th>
+                        <th>Préparation</th>
+                        <th>Cuisson</th>
+                        <th>Temps total</th>
+                    </tr>
+                    <tr>
+                        <td>Facile</td>
+                        <td>10 min</td>
+                        <td>25 min</td>
+                        <td>35 min</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="grille reveal">
+                <div class="colonne1 colonne">
+                    <div class="entete-colonne">
+                        <h2>Ingrédients</h2>
+                        <div class="controle-portions">
+                            <button id="portions-moins" class="bouton-portion" type="button" aria-label="Réduire le nombre de portions">−</button>
+                            <span><span id="portions-valeur">4</span> portions</span>
+                            <button id="portions-plus" class="bouton-portion" type="button" aria-label="Augmenter le nombre de portions">+</button>
+                        </div>
+                    </div>
+
+                    <p class="progression-texte"><span id="ingredients-coches">0</span>/<span id="ingredients-total">5</span> réunis</p>
+
+                    <div class="ingredients" id="liste-ingredients">
+                        <p data-base="200" data-unite="g"><span class="case-cacao" aria-hidden="true"></span><span class="nom-ingredient">Chocolat noir</span><span class="quantite">200 g</span></p>
+                        <p data-base="200" data-unite="g"><span class="case-cacao" aria-hidden="true"></span><span class="nom-ingredient">Beurre</span><span class="quantite">200 g</span></p>
+                        <p data-base="150" data-unite="g"><span class="case-cacao" aria-hidden="true"></span><span class="nom-ingredient">Sucre</span><span class="quantite">150 g</span></p>
+                        <p data-base="3" data-unite=""><span class="case-cacao" aria-hidden="true"></span><span class="nom-ingredient">Œufs</span><span class="quantite">3</span></p>
+                        <p data-base="80" data-unite="g"><span class="case-cacao" aria-hidden="true"></span><span class="nom-ingredient">Farine</span><span class="quantite">80 g</span></p>
+                    </div>
+                </div>
+
+                <div class="colonne2 colonne">
+                    <div class="entete-colonne">
+                        <h2>Préparation</h2>
+                    </div>
+
+                    <table class="preparation" id="liste-etapes">
+                        <tr class="etape"><td><p class="numero">1</p></td><td class="preparation_etape">Faire fondre le chocolat avec le beurre.</td></tr>
+                        <tr class="etape"><td><p class="numero">2</p></td><td class="preparation_etape">Mélanger le sucre, les œufs et la farine.</td></tr>
+                        <tr class="etape"><td><p class="numero">3</p></td><td class="preparation_etape">Mélanger le tout pour obtenir une pâte lisse.</td></tr>
+                        <tr class="etape" data-minuteur="1500"><td><p class="numero">4</p></td><td class="preparation_etape">Verser dans un moule et mettre au four à 180°C pendant 25 minutes.</td></tr>
+                    </table>
+
+                    <button id="btn-mode-cuisine" class="bouton-mode-cuisine" type="button">
+                        <span>▶</span> Démarrer le mode cuisine
+                    </button>
+                </div>
+            </div>
+
+            <footer class="pied-recette reveal">
+                <p>Projet personnel — recette codée en HTML, CSS &amp; JavaScript vanilla.</p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- ============ MODE CUISINE (overlay plein écran) ============ -->
+    <div class="overlay-cuisine" id="overlay-cuisine" hidden>
+        <button class="fermer-overlay" id="btn-fermer-cuisine" type="button" aria-label="Fermer le mode cuisine">✕</button>
+
+        <div class="overlay-contenu">
+            <p class="overlay-compteur"><span id="etape-actuelle-num">1</span> / <span id="etape-total-num">4</span></p>
+            <h2 class="overlay-texte" id="overlay-etape-texte">Faire fondre le chocolat avec le beurre.</h2>
+
+            <div class="minuteur" id="minuteur-cuisson" hidden>
+                <svg class="minuteur-anneau" viewBox="0 0 120 120">
+                    <circle class="anneau-fond" cx="60" cy="60" r="52"></circle>
+                    <circle class="anneau-progression" id="anneau-progression" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="minuteur-temps" id="minuteur-temps">25:00</span>
+                <div class="minuteur-boutons">
+                    <button id="btn-minuteur-demarrer" type="button">Démarrer</button>
+                    <button id="btn-minuteur-reinit" type="button">Réinitialiser</button>
+                </div>
+            </div>
+
+            <div class="overlay-points" id="overlay-points" aria-hidden="true"></div>
+
+            <div class="overlay-navigation">
+                <button id="btn-etape-precedente" type="button">← Précédent</button>
+                <button id="btn-etape-suivante" type="button">Suivant →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
